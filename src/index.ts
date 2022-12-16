@@ -6,7 +6,7 @@ const installOptions: IinstallOptions = {
   keyName: "@",
 };
 
-export function myAliases(
+export function MiniAliases(
   options: IinstallOptions = installOptions
 ): PluginOption {
   return {
