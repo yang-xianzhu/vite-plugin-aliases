@@ -5,7 +5,7 @@
     "aliases",
     "auto"
   ],
-  "private": true,
+  "private": false,
   "author": "yzz",
   "version": "1.0.0",
   "type": "module",
