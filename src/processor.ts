@@ -33,7 +33,7 @@ function getSrcDir(options: IinstallOptions) {
     [k in string]: string;
   } = {};
   diffResult.dirs.forEach((dirName) => {
-    const key = `${options}${dirName}`;
+    const key = `${options.keyName}${dirName}`;
     const dirPath = path.resolve(__dirname, `./src/${dirName}`);
     resoleAliases[key] = dirPath;
   });

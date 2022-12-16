@@ -7,7 +7,7 @@
   ],
   "private": false,
   "author": "yzz",
-  "version": "1.0.0",
+  "version": "1.0.1",
   "type": "module",
   "scripts": {
     "dev": "vite",
