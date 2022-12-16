@@ -1,6 +1,12 @@
 {
   "name": "yzz-vite-plugin-aliases",
+  "keywords": [
+    "vite",
+    "aliases",
+    "auto"
+  ],
   "private": true,
+  "author": "yzz",
   "version": "1.0.0",
   "type": "module",
   "scripts": {
