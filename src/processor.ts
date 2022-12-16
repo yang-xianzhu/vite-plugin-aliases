@@ -1,7 +1,8 @@
 import { IinstallOptions, IDiffDirAndFileResult } from "./type";
-const qs = require("fs");
+const fs = require("fs");
 const path = require("path");
 
+const URL = "../src/../yzz-vite-plugin-aliases";
 // 区分：文件和文件夹函数
 function diffDirAndFile(
   dirFilesArr: Array<string> = [],
@@ -12,7 +13,7 @@ function diffDirAndFile(
     files: [], // 存储普通文件
   };
   dirFilesArr.forEach((name) => {
-    const currentFileStat = qs.statSync(
+    const currentFileStat = fs.statSync(
       path.resolve(__dirname, `${basePath}/${name}`)
     );
     const isDirectory = currentFileStat.isDirectory();
@@ -29,15 +30,15 @@ function diffDirAndFile(
 // 读取文件函数
 function getSrcDir(options: IinstallOptions) {
   // 同步读取scr下的所有目录
-  const result = qs.readdirSync(path.resolve(__dirname, "../src"));
-  const diffResult = diffDirAndFile(result as any, "../src");
+  const result = fs.readdirSync(path.resolve(__dirname, URL));
+  const diffResult = diffDirAndFile(result as any, URL);
 
   const resoleAliases: {
     [k in string]: string;
   } = {};
   diffResult.dirs.forEach((dirName) => {
-    const key = `${options.keyName}${dirName}`;
-    const dirPath = path.resolve(__dirname, `../src/${dirName}`);
+    const key = `${options.keyName}/${dirName}`;
+    const dirPath = path.resolve(__dirname, `${URL}/${dirName}`);
     resoleAliases[key] = dirPath;
   });
   return resoleAliases;
