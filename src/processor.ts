@@ -2,7 +2,7 @@ import { IinstallOptions, IDiffDirAndFileResult } from "./type";
 const fs = require("fs");
 const path = require("path");
 
-const URL = "../src/../yzz-vite-plugin-aliases";
+const URL = "./src";
 // 区分：文件和文件夹函数
 function diffDirAndFile(
   dirFilesArr: Array<string> = [],
